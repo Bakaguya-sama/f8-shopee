@@ -1,0 +1,56 @@
+.header {
+    height: 120px;
+    background-image: linear-gradient(0, #fe6433, #f53e2d);
+}
+
+.header__navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .header__navbar::after {
+    content: "";
+    clear: both;
+    display: table;
+} */
+
+.header__navbar-list{
+    list-style: none;
+    padding-left: 0;
+    /* Vì ul mặc định có padding-left là 40px */
+}
+
+.header__navbar-item {
+    margin: 0 8px;
+    position: relative;
+}
+
+.header__navbar-item-link,
+.header__navbar-item {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.header__navbar-item--bold {
+    font-weight: 400;
+}
+
+.header__navbar-item--separate::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-right: 1px solid #FB9086;
+    right: -9px;
+    /* 
+    Trường hợp	Vị trí mặc định của ::after
+    Không có left/right =>	Nằm ở mép trái của phần tử cha (mặc định left: 0)
+    Có right: 0 =>	Nằm sát mép phải của phần tử cha
+    Có right: -9px =>	Nằm lệch sang phải 9px, vượt ra ngoài
+    */
+    height: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}

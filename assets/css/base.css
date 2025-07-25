@@ -1,7 +1,41 @@
-/* Reset CSS */
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+}
 
 * {
-    margin: 0;
-    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* HACK */
+    font-size: 62.5%;
+    /* 62.5% => 10px */
+    line-height: 1.6rem;
+    font-family: "Roboto", sans-serif;
     box-sizing: border-box;
+}
+
+.grid {
+    width: 1200px;
+    /* Đây là chiều rộng cố định mặc định của .grid. Khi trình duyệt đủ rộng (>= 1200px), .grid sẽ có chiều rộng 1200px. */
+    max-width: 100%;
+    /* .grid không bao giờ được rộng hơn 100% của phần tử cha (trong trường hợp này là <body> hoặc .main).
+
+    Nếu trình duyệt nhỏ hơn 1200px, ví dụ 800px, thì:
+
+        width: 1200px không thể áp dụng vì vượt quá giới hạn max-width: 100%.
+
+        Kết quả: .grid sẽ thu hẹp lại còn 800px để vừa màn hình. */
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
 }
