@@ -39,3 +39,13 @@ html {
     display: flex;
     flex-wrap: wrap;
 }
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
