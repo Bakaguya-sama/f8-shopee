@@ -36,6 +36,7 @@
     font-weight: 300;
 }
 
+.header__navbar-item--has-noti:hover .header__noti,
 .header__navbar-item--show:hover .header__qr {
     display: block;
 }
@@ -135,4 +136,129 @@
 
 .header__qr-download-img {
     height: 15px;
+}
+
+/* Notification Header */
+.header__noti {
+    position: absolute;
+    top: 118%;
+    width: 404px;
+    background-color: var(--white-color);
+    right: 0;
+    border: 1px solid #D3D3D3;
+    cursor: default;
+    transform-origin: calc(100% - 20px) top;
+    animation: headerNotiAnimation ease-in 0.2s;
+    display: none;
+    will-change: opacity, transform;
+}
+
+.header__noti::before {
+    position: absolute;
+    content: '';
+    top: -29px;
+    right: 0px;
+    border-width: 20px 27px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+}
+
+.header__noti::after {
+    position: absolute;
+    content: '';
+    display: block;
+    right: 0;
+    top: -16px;
+    width: 90px;
+    height: 20px;
+    /* background-color: var(--white-color); */
+    /* Làm cầu nối để người chuột hover sang thông báo */
+}
+
+@keyframes headerNotiAnimation {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.header__noti-header {
+    height: 40px;
+    background-color: var(--white-color);
+}
+
+.header__noti-header h3 {
+    color: #999;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 40px;
+    margin: 0 0 0 12px;
+    cursor: text;
+    /* user-select: none; */
+}
+
+.header__noti-list {
+    padding-left: 0;
+}
+
+.header__noti-item {
+    display: flex;
+}
+
+.header__noti-item:hover {
+    background-color: #f7f7f7;
+}
+
+.header__noti-item--viewed {
+    background-color: rgba(238, 77, 45, 0.08);
+}
+
+.header__noti-link {
+    display: flex;
+    padding: 12px;
+    text-decoration: none;
+    width: 100%;
+}
+
+.header__noti-img {
+    width: 48px;
+    object-fit: contain;
+}
+
+.header__noti-info {
+    margin-left: 12px;
+}
+
+.header__noti-name {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    font-weight: 400;
+    line-height: 1.8rem;
+}
+
+.header__noti-description {
+    display: block;
+    font-size: 1.2rem;
+    color: #756F6E;
+    line-height: 1.6rem;
+    margin-top: 4px;
+}
+
+.header__noti-footer {
+    display: flex;
+}
+
+.header__noti-footer-btn {
+    text-decoration: none;
+    padding: 8px 0;
+    color: var(--text-color);
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 400;
+    width: 100%;
 }
