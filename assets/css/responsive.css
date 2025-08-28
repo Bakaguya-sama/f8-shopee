@@ -25,7 +25,7 @@
         padding: 0 calc((100% - 644px) / 2);
     }
 
-    .header__cart-list::before{
+    .header__cart-list::before {
         display: none;
     }
 
@@ -35,6 +35,36 @@
 
     .header__sort-bar {
         display: flex;
+    }
+
+    .header__left-search {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav__bar-btn {
+        display: block;
+    }
+
+    .nav__bar-btn .nav__bar-icons {
+        font-size: 2.6rem;
+        color: var(--white-color);
+        top: 50%;
+        translate: translateY(10%);
+    }
+
+    .nav__mobile-list {
+        display: block;
+    }
+
+    .nav__input:checked~.nav__overlay {
+        display: block;
+    }
+
+    .nav__input:checked~.nav__mobile {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
@@ -48,11 +78,80 @@
         width: 80px;
         text-align: right;
     }
+
+    .header__left-search {
+        margin-right: 16px;
+    }
 }
 
 /* Mobile */
 @media (max-width: 739px) {
     .hide-on-mobile {
         display: none;
+    }
+
+    .header-search-bar {
+        justify-content: space-between;
+    }
+
+    .header__cart,
+    .header__logo {
+        width: unset;
+    }
+
+    .header__search {
+        position: fixed;
+        /* top: var(--header-height); */
+        top: calc(var(--header-height) / 2);
+        /* bắt đầu cao hơn */
+        left: 0;
+        right: 0;
+        height: 46px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        padding: 0 8px;
+        /* animation: mobileSearchSlideIn 0.3s linear; */
+        /* display: none; */
+        z-index: -1;
+
+        opacity: 0;
+        pointer-events: none;
+        /* tránh bị click khi ẩn */
+    }
+
+    .header__mobile-search {
+        display: block;
+    }
+
+    .header__search-checkbox:checked~.header__search {
+        animation: mobileSearchSlideIn 0.4s linear forwards;
+        pointer-events: auto;
+    }
+
+    .header__search-history {
+        position: fixed;
+        top: calc(var(--header-height) + var(--header-sort-bar-height));
+        left: 0;
+        width: 100%;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    @keyframes mobileSearchSlideIn {
+        0% {
+            top: calc(var(--header-height) / 2);
+            opacity: 0;
+            z-index: -1;
+        }
+
+        70% {
+            top: calc(var(--header-height) / 2 + 8px);
+            opacity: 0;
+            z-index: -1;
+        }
+
+        100% {
+            top: var(--header-height);
+            opacity: 1;
+            z-index: 3;
+        }
     }
 }

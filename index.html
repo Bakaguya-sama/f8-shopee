@@ -140,6 +140,36 @@
 
                 <!-- Header Search Bar -->
                 <div class="header-search-bar">
+                    <div class="header__left-search">
+                        <!-- Header Nav Bar -->
+                        <label for="nav-mobile-input" class="nav__bar-btn">
+                            <i class="fa-solid fa-bars nav__bar-icons"></i>
+                        </label>
+
+                        <input type="checkbox" hidden id="nav-mobile-input" class="nav__input">
+
+                        <label for="nav-mobile-input" class="nav__overlay"></label>
+
+                        <nav class="nav__mobile">
+                            <ul class="nav__mobile-list">
+                                <li class="nav__mobile-item nav__mobile-item--active">
+                                    <a href="" class="nav__mobile-link">Home</a>
+                                </li>
+                                <li class="nav__mobile-item">
+                                    <a href="" class="nav__mobile-link">About</a>
+                                </li>
+                                <li class="nav__mobile-item">
+                                    <a href="" class="nav__mobile-link">Login/Register</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <label for="mobile-search-checkbox" class="header__mobile-search">
+                            <i class="header__mobile-search-icon fa-solid fa-magnifying-glass"></i>
+                        </label>
+
+                    </div>
+
                     <div class="header__logo hide-on-tablet">
                         <a href="/shopee" class="header__logo-link">
                             <svg viewBox="0 0 192 65" class="header__logo-img">
@@ -151,6 +181,8 @@
                             </svg>
                         </a>
                     </div>
+
+                    <input type="checkbox" hidden id="mobile-search-checkbox" class="header__search-checkbox" />
 
                     <div class="header__search">
                         <div class="header__search-input-wrapper">
