@@ -262,6 +262,7 @@ html {
     text-align: center;
     border-radius: 2px;
     font-weight: 300;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .pagination-item__icon {
