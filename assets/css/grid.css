@@ -118,6 +118,10 @@
 muốn căn giữa thì chúng ta lấy cái phần dư chia đôi là sẽ ra cái class -o-(kết quả của phép chia kia)
  */
 
+.c-o-0 {
+    margin-left: 0;
+}
+
 .c-o-1 {
     margin-left: 8.33333%;
 }
@@ -251,6 +255,10 @@ muốn căn giữa thì chúng ta lấy cái phần dư chia đôi là sẽ ra c
     .m-12 {
         flex: 0 0 100%;
         max-width: 100%;
+    }
+
+    .m-o-0 {
+        margin-left: 0;
     }
 
     .m-o-1 {
